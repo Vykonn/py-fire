@@ -22,6 +22,7 @@ def handleinput(input):
     global commande
     command = False
     commande = []
+    print(input)
     if input[1] == 16 or input[1] == 17 or input[1] == 18 or input[1] == 19 or input[1] == 118 or input[1] == 25:
         if input[0] == 144:
             if input[2] == 127:
@@ -42,7 +43,7 @@ def handleinput(input):
                        commande = data["%s2" % inputm][1]
                        command = True
                     else:
-                        keyboard.press("+".join(data["%s1" % inputm]))
+                        keyboard.press("+".join(data["%s2" % inputm]))
             if input[2] == 1:
                 ##RIGHT INPUT - 3
                 if "%s3" % inputm in data:
@@ -50,9 +51,9 @@ def handleinput(input):
                         commande = data["%s3" % inputm][1]
                         command = True
                     else:
-                        keyboard.press("+".join(data["%s1" % inputm]))
+                        keyboard.press("+".join(data["%s3" % inputm]))
     else:
-        if input[2] == 127:
+        if input[2] >= 1:
             if "{}".format(inputm) in data:
                 if data["{}".format(inputm)][0] == "cmd":
                     commande = data["%s" % input[1]][1]
