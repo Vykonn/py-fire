@@ -39,7 +39,7 @@ def handleinput(input):
                 ##LEFT INPUT - 2
                 if "%s2" % inputm in data:
                     if data["%s2" % inputm][0] == "cmd":
-                       commande = data["%s1" % inputm][1]
+                       commande = data["%s2" % inputm][1]
                        command = True
                     else:
                         keyboard.press("+".join(data["%s1" % inputm]))
@@ -47,7 +47,7 @@ def handleinput(input):
                 ##RIGHT INPUT - 3
                 if "%s3" % inputm in data:
                     if data["%s3" % inputm][0] == "cmd":
-                        commande = data["%s1" % inputm][1]
+                        commande = data["%s3" % inputm][1]
                         command = True
                     else:
                         keyboard.press("+".join(data["%s1" % inputm]))
