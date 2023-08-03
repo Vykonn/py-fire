@@ -34,7 +34,7 @@ def handleinput(input):
                         commande = data["%s1" % inputm][1]
                         command = True
                     else:
-                        keyboard.press("+".join(data["%s1" % inputm]))
+                        keyboard.send("+".join(data["%s1" % inputm]))
         if input[0] == 176:
             if input[2] == 127:
                 ##LEFT INPUT - 2
@@ -43,7 +43,7 @@ def handleinput(input):
                        commande = data["%s2" % inputm][1]
                        command = True
                     else:
-                        keyboard.press("+".join(data["%s2" % inputm]))
+                        keyboard.send("+".join(data["%s2" % inputm]))
             if input[2] == 1:
                 ##RIGHT INPUT - 3
                 if "%s3" % inputm in data:
@@ -51,7 +51,7 @@ def handleinput(input):
                         commande = data["%s3" % inputm][1]
                         command = True
                     else:
-                        keyboard.press("+".join(data["%s3" % inputm]))
+                        keyboard.send("+".join(data["%s3" % inputm]))
     else:
         if input[2] >= 1:
             if "{}".format(inputm) in data:
@@ -59,7 +59,7 @@ def handleinput(input):
                     commande = data["%s" % input[1]][1]
                     command = True
                 else:
-                    keyboard.press("+".join(data["%s" % input[1]]))
+                    keyboard.send("+".join(data["%s" % input[1]]))
     if command:
         return commande
     else:
